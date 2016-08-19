@@ -1,0 +1,11 @@
+auto-save-list/
+/conf.el
+*~
+/custom.el
+elpa/
+emojis/
+eshell/
+/history
+/ido.last
+/recentf
+/smex-items
