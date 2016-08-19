@@ -1,0 +1,3 @@
+#+TITLE: README.org --- My personal GNU Emacs configuration
+
+:warning: *NO SUPPORT WILL BE PROVIDED* :warning:
