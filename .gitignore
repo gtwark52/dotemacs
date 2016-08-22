@@ -11,3 +11,5 @@ eshell/
 /smex-items
 /projectile-bookmarks.eld
 server/
+elisp/
+url/

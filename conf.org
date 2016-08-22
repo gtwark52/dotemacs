@@ -61,7 +61,10 @@ The default cursor is hard for me to see at times. Make it bright red and stop t
 Ensure that you have [[https://fedorahosted.org/liberation-fonts/][Liberation Mono]] installed.
 
 #+BEGIN_SRC emacs-lisp
-  (add-to-list 'default-frame-alist '(font . "Liberation Mono"))
+  (when (eq system-type 'windows-nt)
+    (add-to-list 'default-frame-alist '(font . "Liberation Mono")))
+  (when (eq system-type 'gnu/linux)
+    (add-to-list 'default-frame-alist '(font . "Liberation Mono-10.5")))
 #+END_SRC
 
 * Sane Defaults
@@ -317,7 +320,6 @@ Display emojis in Emacs :beer:
         (add-to-list 'company-backends 'company-emoji))
       (add-hook 'after-init-hook #'global-emojify-mode)))
 #+END_SRC
-
 ** eshell
 
 #+BEGIN_SRC emacs-lisp
@@ -549,6 +551,16 @@ Display ugly ^L page breaks as tidy horizontal lines
     :diminish page-break-lines-mode
     :init
     (global-page-break-lines-mode))
+#+END_SRC
+
+** pianobar.el
+
+Run Pandora as an inferior process in emacs by using pianobar
+
+#+BEGIN_SRC emacs-lisp
+  (when (eq system-type 'gnu/linux)
+    (add-to-list 'load-path "~/.emacs.d/elisp/pianobar.el/")
+    (autoload 'pianobar "pianobar" nil t))
 #+END_SRC
 
 ** projectile
