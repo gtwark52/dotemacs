@@ -284,6 +284,21 @@ Modular text completion framework
     (add-hook 'after-init-hook 'global-company-mode))
 #+END_SRC
 
+** company-jedi
+
+company-mode completion back-end for Python JEDI
+
+#+BEGIN_SRC emacs-lisp
+  (use-package company-jedi
+    :ensure t
+    :init
+    (progn
+      (defun my/python-mode-hook ()
+        (add-to-list 'company-backends 'company-jedi))
+
+      (add-hook 'python-mode-hook 'my/python-mode-hook)))
+#+END_SRC
+
 ** csharp-mode
 
 C# mode derived mode
